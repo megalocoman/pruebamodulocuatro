@@ -15,16 +15,19 @@ import tablas.Accidente;
 public class ServletActualizarAccidente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	//instancia objeto de tabla
 	Accidente acc = new Accidente();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		//setea atributos para ingreso en query
 		acc.setIdaccidente(Integer.parseInt(request.getParameter("id")));
 		acc.setDescripcion(request.getParameter("des_incidente"));
 		acc.setClienterutcliente(request.getParameter("cliente"));
 		acc.setFechaaccidente(request.getParameter("fecha_inc"));
 		
+		// instancia metodos que conectan base de datos y hace queries
 		QueryAccidente qa = new QueryAccidente();
 		
 		try {
@@ -34,6 +37,9 @@ public class ServletActualizarAccidente extends HttpServlet {
 			e.printStackTrace();
 		}
 
+		// envia a pantalla que indica que se ingresaron datos
+		getServletContext().getRequestDispatcher("/consultaaccidente.html").forward(request, response);
+		
 	}
 
 }

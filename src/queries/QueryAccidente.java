@@ -11,19 +11,27 @@ import java.util.Objects;
 import conexiondb.ConnectionDB;
 import tablas.Accidente;
 
+/**
+ *clase queries tabla accidente, con respectivos metodos
+ *
+ */
+
 public class QueryAccidente {
 
+	//metodo ingresa accidentes
+	
 	public boolean registrar(Accidente accidente) throws ClassNotFoundException {
 
 		boolean registrar = false;
-
 		Statement stm = null;
 		Connection conn = null;
-
+		
+		// contruccion de query
 		String sql = "INSERT INTO accidente (descripcion, fechaaccidente, clienterutcliente) VALUES ('"
 				+ accidente.getDescripcion() + "', '" + accidente.getFechaaccidente() + "', '"
 				+ accidente.getClienterutcliente() + "')";
 
+		//connexion base de datos y ejecucion de query
 		try {
 
 			conn = ConnectionDB.getCon();
@@ -42,16 +50,19 @@ public class QueryAccidente {
 
 	}
 
+	//metodo consulta tabla accidentes
 	public List<Accidente> obtener() throws ClassNotFoundException {
 
+		
 		Statement stm = null;
 		Connection conn = null;
 		ResultSet rs = null;
-
-		String sql = "SELECT * FROM accidente";
-
 		List<Accidente> listaccidente = new ArrayList<>();
 
+		// contruccion de query
+		String sql = "SELECT * FROM accidente";
+
+		//connexion base de datos y ejecucion de query
 		try {
 			conn = ConnectionDB.getCon();
 			stm = conn.createStatement();
@@ -76,7 +87,9 @@ public class QueryAccidente {
 		return listaccidente;
 	}
 	
+	//metodo actualiza tabla accidentes
 	public boolean actualizar(Accidente accidente) throws ClassNotFoundException  {
+		
 		
 		Statement stm = null;
 		Connection conn = null;
@@ -84,8 +97,7 @@ public class QueryAccidente {
 		boolean actualizar = false;
 		String sql= "null";
 		
-		
-			
+		// contruccion de query
 		if (!(Objects.isNull(accidente.getDescripcion()))) {
 			sql +=" , descripcion= '" + accidente.getDescripcion() + "' ";
 		}
@@ -96,15 +108,15 @@ public class QueryAccidente {
 			sql +=" , clienterutcliente = '" + accidente.getClienterutcliente()+"' ";
 		}
 			
-		
 		sql="UPDATE accidente SET "+sql.replace("null ,", "")+ " WHERE  idaccidente = "+accidente.getIdaccidente();
 		
-		System.out.println(sql);
+		//connexion base de datos y ejecucion de query
 		try {
 			conn = ConnectionDB.getCon();
 			stm = conn.createStatement();
 			rs = stm.executeQuery(sql);
 			actualizar = true;
+			conn.close();
 			
 		}catch(SQLException e) {
 			System.out.println("error de coneccion, metodo actualizar");
@@ -113,4 +125,29 @@ public class QueryAccidente {
 		
 		return actualizar;
 	}
+	
+	//metodo elimina fila accidentes
+	public boolean eliminar(Accidente accidente) throws ClassNotFoundException {
+		
+		Statement stm = null;
+		Connection conn = null;
+		boolean eliminar = false;
+		
+		// contruccion de query
+		String sql = "DELETE FROM accidente WHERE idaccidente= "+accidente.getIdaccidente();
+		
+		//connexion base de datos y ejecucion de query
+		try {
+			conn = ConnectionDB.getCon();
+			stm = conn.createStatement();
+			stm.execute(sql);
+			eliminar= true;
+			
+		}catch(SQLException e) {
+			System.out.println("error de coneccion, metodo eliminar");
+			e.printStackTrace();
+		}
+		return eliminar ;
+	}
+
 }

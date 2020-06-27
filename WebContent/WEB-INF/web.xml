@@ -39,4 +39,14 @@
     <servlet-name>ServletActualizarAccidente</servlet-name>
     <url-pattern>/ServletActualizarAccidente</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletEliminarAccidente</display-name>
+    <servlet-name>ServletEliminarAccidente</servlet-name>
+    <servlet-class>servlet.ServletEliminarAccidente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletEliminarAccidente</servlet-name>
+    <url-pattern>/ServletEliminarAccidente</url-pattern>
+  </servlet-mapping>
 </web-app>
