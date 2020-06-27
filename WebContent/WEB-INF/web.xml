@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>pruebamodulocuatro</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ServletAccidentes</display-name>
+    <servlet-name>ServletAccidentes</servlet-name>
+    <servlet-class>servlet.ServletAccidentes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAccidentes</servlet-name>
+    <url-pattern>/ServletAccidentes</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletConsultaAccidente</display-name>
+    <servlet-name>ServletConsultaAccidente</servlet-name>
+    <servlet-class>servlet.ServletConsultaAccidente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConsultaAccidente</servlet-name>
+    <url-pattern>/ServletConsultaAccidente</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletActualizarAccidente</display-name>
+    <servlet-name>ServletActualizarAccidente</servlet-name>
+    <servlet-class>servlet.ServletActualizarAccidente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletActualizarAccidente</servlet-name>
+    <url-pattern>/ServletActualizarAccidente</url-pattern>
+  </servlet-mapping>
+</web-app>
