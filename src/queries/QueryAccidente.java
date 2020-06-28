@@ -20,7 +20,7 @@ public class QueryAccidente {
 
 	//metodo ingresa accidentes
 	
-	public boolean registrar(Accidente accidente) throws ClassNotFoundException {
+	public boolean registrar(Accidente accidente) throws ClassNotFoundException, SQLException {
 
 		boolean registrar = false;
 		Statement stm = null;
@@ -33,25 +33,25 @@ public class QueryAccidente {
 
 		//connexion base de datos y ejecucion de query
 		try {
-
 			conn = ConnectionDB.getCon();
 			stm = conn.createStatement();
 			stm.execute(sql);
 			registrar = true;
-			conn.close();
+			
 			System.out.println("fila ingresada...");
 
 		} catch (SQLException e) {
 			System.out.println("error de coneccion, metodo registrar");
 			e.printStackTrace();
+		} finally {
+			conn.close();
 		}
-
+		
 		return registrar;
-
 	}
 
 	//metodo consulta tabla accidentes
-	public List<Accidente> obtener() throws ClassNotFoundException {
+	public List<Accidente> obtener() throws ClassNotFoundException, SQLException {
 
 		
 		Statement stm = null;
@@ -77,18 +77,19 @@ public class QueryAccidente {
 				a.setClienterutcliente(rs.getString(4));
 				listaccidente.add(a);
 			}
-			conn.close();
-
+			
 		} catch (SQLException e) {
 			System.out.println("error de coneccion, metodo ob tener");
 			e.printStackTrace();
+		} finally {
+			conn.close();
 		}
 
 		return listaccidente;
 	}
 	
 	//metodo actualiza tabla accidentes
-	public boolean actualizar(Accidente accidente) throws ClassNotFoundException  {
+	public boolean actualizar(Accidente accidente) throws ClassNotFoundException, SQLException  {
 		
 		
 		Statement stm = null;
@@ -116,18 +117,20 @@ public class QueryAccidente {
 			stm = conn.createStatement();
 			rs = stm.executeQuery(sql);
 			actualizar = true;
-			conn.close();
+			
 			
 		}catch(SQLException e) {
 			System.out.println("error de coneccion, metodo actualizar");
 			e.printStackTrace();
+		} finally {
+			conn.close();
 		}
 		
 		return actualizar;
 	}
 	
 	//metodo elimina fila accidentes
-	public boolean eliminar(Accidente accidente) throws ClassNotFoundException {
+	public boolean eliminar(Accidente accidente) throws ClassNotFoundException, SQLException {
 		
 		Statement stm = null;
 		Connection conn = null;
@@ -146,8 +149,10 @@ public class QueryAccidente {
 		}catch(SQLException e) {
 			System.out.println("error de coneccion, metodo eliminar");
 			e.printStackTrace();
+		} finally {
+			conn.close();
 		}
-		return eliminar ;
+		
+		return eliminar;
 	}
-
 }
