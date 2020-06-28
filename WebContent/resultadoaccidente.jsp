@@ -26,6 +26,12 @@
 <td>${Accidente.idaccidente}</td>
 <td>${Accidente.descripcion}</td>
 <td>${Accidente.fechaaccidente}</td>
+<td>
+	<a href="${pageContext.request.contextPath}/ServletEliminarAccidente?id=${Accidente.idaccidente}">eliminar</a>
+</td>
+<td>
+	<a href="actualizar.html"> actualizar datos</a>
+</td>
 </tr>
 
 </c:forEach>

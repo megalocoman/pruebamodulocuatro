@@ -51,10 +51,10 @@ public class ServletAccidentes extends HttpServlet {
 		try {
 			qa.registrar(a);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 

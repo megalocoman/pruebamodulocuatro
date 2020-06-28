@@ -24,7 +24,7 @@ public class ServletConsultaAccidente extends HttpServlet {
 	Accidente acc = new Accidente();
 	List<Accidente> listacc = new ArrayList<Accidente>();
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		// instancia metodos que conectan base de datos y hace queries

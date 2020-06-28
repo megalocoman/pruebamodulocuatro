@@ -17,7 +17,7 @@ public class ServletEliminarAccidente extends HttpServlet {
 	//instancia objeto de tabla
 	Accidente acc = new Accidente();
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		// instancia metodos que conectan base de datos y hace queries
