@@ -17,6 +17,7 @@ import tablas.Accidente;
 /**
  * Servlet implementation class ServletConsultaAccidente
  */
+
 public class ServletConsultaAccidente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

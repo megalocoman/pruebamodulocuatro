@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 import conexiondb.ConnectionDB;
 import tablas.Accidente;
 
@@ -59,7 +58,7 @@ public class QueryAccidente {
 		ResultSet rs = null;
 		List<Accidente> listaccidente = new ArrayList<>();
 
-		// contruccion de query
+		// construccion de query
 		String sql = "SELECT * FROM accidente";
 
 		//connexion base de datos y ejecucion de query
@@ -71,7 +70,6 @@ public class QueryAccidente {
 			
 			while (rs.next()) {
 				Accidente a = new Accidente();
-				a.setIdaccidente(rs.getInt(1));
 				a.setDescripcion(rs.getString(2));
 				a.setFechaaccidente(rs.getString(3));
 				a.setClienterutcliente(rs.getString(4));

@@ -17,6 +17,8 @@
 	</form>
 	
 	<a href="${pageContext.request.contextPath}/ServletConsultaAccidente">Ir a lista de accidentes</a>
+	
+	
 
 </body>
 </html>

@@ -26,6 +26,7 @@ public class IdNombre {
 		}
 
 		String sql = "SELECT * FROM " + tabla + " WHERE " + nomrut + " = '" + nombreId + "'";
+		System.out.println(sql);
 
 		try {
 			conn = ConnectionDB.getCon();
