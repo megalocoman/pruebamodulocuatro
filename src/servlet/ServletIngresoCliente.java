@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,8 @@ public class ServletIngresoCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	Cliente cl = new Cliente();
+	
+	public boolean valido= false;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,14 +35,19 @@ public class ServletIngresoCliente extends HttpServlet {
 		QueryCliente qc = new QueryCliente();
 
 		try {
-			qc.registrar(cl);
+			valido = qc.registrar(cl);
 		} catch (ClassNotFoundException | SQLException e) {
 
 			e.printStackTrace();
 		}
 
 		// envia a pantalla que indica que se ingresaron datos
-		getServletContext().getRequestDispatcher("/consultacliente.jsp").forward(request, response);
+		
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ingresocliente.jsp");
+//		getServletContext().getRequestDispatcher("/ingresocliente.jsp").forward(request, response);
+		request.setAttribute("valido", valido);
+		requestDispatcher.forward(request, response);
+		
 	}
 
 }

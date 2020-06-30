@@ -139,4 +139,14 @@
     <servlet-name>ServletEliminarCliente</servlet-name>
     <url-pattern>/ServletEliminarCliente</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletInformeProfesional</display-name>
+    <servlet-name>ServletInformeProfesional</servlet-name>
+    <servlet-class>servlet.ServletInformeProfesional</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletInformeProfesional</servlet-name>
+    <url-pattern>/ServletInformeProfesional</url-pattern>
+  </servlet-mapping>
 </web-app>
