@@ -37,19 +37,19 @@ public class MainPruebas {
 	
 //		IdNombre nom = new IdNombre();	
 //		System.out.println(nom.isRutValido("15891122-7"));
-		
-		QueryInforme qi = new QueryInforme();
-		
-		List<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
-		
-		table= qi.informeProfesional();
-		
-		for (int i = 0; i <table.size(); i++) {
-			for(int j =0; j < table.get(i).size(); j++) {
-				System.out.print(table.get(i).get(j)+ ", ");
-			}
-			System.out.println("");
-		}
+//		
+//		QueryInforme qi = new QueryInforme();
+//		
+//		List<ArrayList<String>> table = new ArrayList<ArrayList<String>>();
+//		
+//		table= qi.informeProfesional();
+//		
+//		for (int i = 0; i <table.size(); i++) {
+//			for(int j =0; j < table.get(i).size(); j++) {
+//				System.out.print(table.get(i).get(j)+ ", ");
+//			}
+//			System.out.println("");
+//		}
 		
 		
 		

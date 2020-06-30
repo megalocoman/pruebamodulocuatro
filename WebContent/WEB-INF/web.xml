@@ -149,4 +149,14 @@
     <servlet-name>ServletInformeProfesional</servlet-name>
     <url-pattern>/ServletInformeProfesional</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletInformeCliente</display-name>
+    <servlet-name>ServletInformeCliente</servlet-name>
+    <servlet-class>servlet.ServletInformeCliente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletInformeCliente</servlet-name>
+    <url-pattern>/ServletInformeCliente</url-pattern>
+  </servlet-mapping>
 </web-app>

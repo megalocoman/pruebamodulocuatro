@@ -12,13 +12,6 @@
 	<h1>Informes de gestion</h1>
 	<h2>informe de gestion profesional</h2>
 
-	
-
-	<form action="ServletInformeProfesional" method="get">
-		<input type="submit" name="inf_profesional" value="crear informe">
-	</form>
-	
-	
 	<table>
 		<thead>
 			<tr>
@@ -32,7 +25,7 @@
 		<tbody>
 			<c:forEach var="table" items="${informe_prof}">
 				<tr>
-				
+
 					<td>${table.profesional}</td>
 					<td>${table.ncliente}</td>
 					<td>${table.nactividades}</td>
@@ -42,7 +35,39 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	
 
+	<form action="ServletInformeProfesional" method="get">
+		<input type="submit" name="inf_profesional" value="crear informe">
+	</form>
+
+
+	<h2>Informe clientes</h2>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Cliente</th>
+				<th>Numero actividades</th>
+				<th>Valor actividades</th>
+				<th>Total pagado</th>
+				<th>total accidentes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="lista" items="${informe_cli}">
+				<tr>
+					<td>${lista.nombrecliente}</td>
+					<td>${lista.numeroactividades}</td>
+					<td>${lista.valortotal}</td>
+					<td>${lista.valorpagado}</td>
+					<td>${lista.naccidentes}</td>
+				</tr>
+
+			</c:forEach>
+		</tbody>
+	</table>
+	<form action="ServletInformeCliente" method="get">
+		<input type="submit" name="inf_profesional" value="crear informe">
+	</form>
 </body>
 </html>
