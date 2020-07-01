@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<c:out value="${mensajeact}"></c:out>
+<c:out value="${mensajeeli}"></c:out>
 	<h1>consulta profesionales</h1>
 
 	<table>

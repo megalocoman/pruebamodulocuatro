@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,8 @@ public class ServletIngresoProf extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		boolean valido= false;
+		
 		pro.setRutprofesional(request.getParameter("rut_prof"));
 		pro.setNombre(request.getParameter("nom_prof"));
 		pro.setTelefono((request.getParameter("telefono")));
@@ -36,8 +39,17 @@ public class ServletIngresoProf extends HttpServlet {
 			e.printStackTrace();
 		} 
 		
-		// envia a pantalla que indica que se ingresaron datos
-		getServletContext().getRequestDispatcher("/consultaprofesional.jsp").forward(request, response);
+		String mensajeing = "";
+
+		if (valido)
+			mensajeing = "el cliente ha sido ingresado exitosamente.";
+		else
+			mensajeing = "el cliente no fue ingresado, se produjo un error";
+
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ingresoprofesional.jsp");
+		request.setAttribute("mensajeing", mensajeing);
+		requestDispatcher.forward(request, response);
+		
 		
 		
 	}

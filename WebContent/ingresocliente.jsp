@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,7 @@
 <body>
 <h1>Ingreso datos cliente</h1>
 
+<c:out value="${mensaje}"></c:out>
 <form action="ServletIngresoCliente" method="post">
 		Rut cliente: <input type="text" name="rut_cliente" id="rut_cliente"> <br>
 		Nombre cliente: <input type="text" name="nom_cliente" id="nom_cliente"><br> 
@@ -19,6 +21,8 @@
 		
 		<input type="submit" name="ing_incidente" value="ingresar">
 	</form>
+	
+	<a href="consultacliente.jsp">ir a consulta de cliente</a>
 
 </body>
 </html>

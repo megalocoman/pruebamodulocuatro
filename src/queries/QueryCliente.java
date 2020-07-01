@@ -9,7 +9,7 @@ import java.util.List;
 
 import conexiondb.ConnectionDB;
 import tablas.Cliente;
-import tablas.Profesional;
+
 
 public class QueryCliente {
 

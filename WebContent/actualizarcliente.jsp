@@ -18,6 +18,6 @@ Correo: <input type="text" name="correo_cli" id="correo_cli"><br>
 Contacto: <input type="text" name="contacto_cli" id="contacto_cli"><br> 
 <input type="submit" name="actualizar" value="Actualizar">
 </form>
-
+<a href ="consultacliente.jsp">Ir a consulta de cliente</a>
 </body>
 </html>

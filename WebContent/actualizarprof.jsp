@@ -15,6 +15,8 @@ Nombre: <input type="text" name="nombre" id="nombre"> <br>
 Telefono: <input type="text" name="telefono" id="telefono"><br> 
 Correo: <input type="text" name="correo" id="correo"><br> 
 <input type="submit" name="actualizar" value="Actualizar">
+
+<a href="resultadoaccidente.jsp">Ir a consultar accidentes</a>
 </form>
 </body>
 </html>

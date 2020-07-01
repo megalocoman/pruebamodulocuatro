@@ -42,10 +42,18 @@ public class ServletIngresoCliente extends HttpServlet {
 		}
 
 		// envia a pantalla que indica que se ingresaron datos
+		String mensaje = "";
+		
+		if(valido) 
+			mensaje = "el cliente ha sido ingresado exitosamente.";
+		else 
+			mensaje = "el cliente no fue ingresado, se produjo un error";
+			
+		
 		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ingresocliente.jsp");
 //		getServletContext().getRequestDispatcher("/ingresocliente.jsp").forward(request, response);
-		request.setAttribute("valido", valido);
+		request.setAttribute("mensaje", mensaje);
 		requestDispatcher.forward(request, response);
 		
 	}

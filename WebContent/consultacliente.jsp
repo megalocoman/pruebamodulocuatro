@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<c:out value="${mensaje}"></c:out>
+<c:out value="${mensajeact}"></c:out>
 	<h1>consulta Clientes</h1>
 	<table>
 		<thead>
@@ -45,5 +48,7 @@
 	<form action="ServletConsultaCliente" method="get">
 		<input type="submit" name="consultarcli" value="consultar">
 	</form>
+	
+	<a href="ingresocliente.jsp">ir a ingreso cliente</a>
 </body>
 </html>

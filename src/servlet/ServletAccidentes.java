@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,8 @@ public class ServletAccidentes extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String mensaje = "";
+
 		try {
 			b = nom.BuscaId((request.getParameter("cliente")), "cliente");
 		} catch (Exception e1) {
@@ -39,10 +42,14 @@ public class ServletAccidentes extends HttpServlet {
 		System.out.println("variable " + b);
 
 		if ((Objects.isNull(b))) {
-			getServletContext().getRequestDispatcher("/ingreso.jsp").forward(request, response);
-		}
-		else {
-			
+
+			mensaje = "cliente inexistente";
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ingreso.jsp");
+			request.setAttribute("mensaje", mensaje);
+			requestDispatcher.forward(request, response);
+
+		} else {
+
 			// seta parametros en objeto tabla
 			a.setDescripcion(request.getParameter("des_incidente"));
 			a.setFechaaccidente(request.getParameter("fecha_inc"));
@@ -50,9 +57,10 @@ public class ServletAccidentes extends HttpServlet {
 
 			// instancia metodos que conectan base de datos y hace queries
 			QueryAccidente qa = new QueryAccidente();
+			boolean ingresoaccidente = false;
 
 			try {
-				qa.registrar(a);
+				ingresoaccidente = qa.registrar(a);
 			} catch (ClassNotFoundException e) {
 
 				e.printStackTrace();
@@ -61,8 +69,15 @@ public class ServletAccidentes extends HttpServlet {
 				e.printStackTrace();
 			}
 
-			// envia a pantalla que indica que se ingresaron datos
-			getServletContext().getRequestDispatcher("/consultaprofesional.jsp").forward(request, response);
+			if (ingresoaccidente)
+				mensaje = "el cliente ha sido ingresado exitosamente.";
+			else
+				mensaje = "el cliente no fue ingresado, se produjo un error";
+
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/ingreso.jsp");
+			request.setAttribute("mensaje", mensaje);
+			requestDispatcher.forward(request, response);
+
 		}
 	}
 }

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import queries.QueryAccidente;
 import tablas.Accidente;
+import tablas.ConsultaAccidente;
 
 /**
  * Servlet implementation class ServletConsultaAccidente
@@ -23,7 +24,7 @@ public class ServletConsultaAccidente extends HttpServlet {
 
 	// instancia objeto de tabla y lista deobjeto tabla
 	Accidente acc = new Accidente();
-	List<Accidente> listacc = new ArrayList<Accidente>();
+	List<ConsultaAccidente> listacc = new ArrayList<ConsultaAccidente>();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

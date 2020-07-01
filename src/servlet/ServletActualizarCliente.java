@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,8 @@ public class ServletActualizarCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	Cliente cli = new Cliente();
+	
+	boolean actclientevalido = false;
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -31,13 +34,25 @@ public class ServletActualizarCliente extends HttpServlet {
 		QueryCliente qc = new QueryCliente();
 		
 		try {
-			qc.actualizar(cli);
+			actclientevalido = qc.actualizar(cli);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		getServletContext().getRequestDispatcher("/consultacliente.jsp").forward(request, response);
+		String mensajeactcliente = "";
+
+		if (actclientevalido)
+			mensajeactcliente = "el cliente ha sido acualizado exitosamente.";
+		else
+			mensajeactcliente = "el cliente no fue eliminado, se produjo un error";
+
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/consultacliente.jsp");
+		request.setAttribute("mensajeact", mensajeactcliente);
+		requestDispatcher.forward(request, response);
+
+		
+//		getServletContext().getRequestDispatcher("/consultacliente.jsp").forward(request, response);
 	}
 
 }

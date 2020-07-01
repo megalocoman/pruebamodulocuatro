@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import conexiondb.ConnectionDB;
 import tablas.Accidente;
+import tablas.ConsultaAccidente;
 
 /**
  *clase queries tabla accidente, con respectivos metodos
@@ -50,16 +51,18 @@ public class QueryAccidente {
 	}
 
 	//metodo consulta tabla accidentes
-	public List<Accidente> obtener() throws ClassNotFoundException, SQLException {
+	public List<ConsultaAccidente> obtener() throws ClassNotFoundException, SQLException {
 
 		
 		Statement stm = null;
 		Connection conn = null;
 		ResultSet rs = null;
-		List<Accidente> listaccidente = new ArrayList<>();
+		List<ConsultaAccidente> listaccidente = new ArrayList<>();
 
 		// construccion de query
-		String sql = "SELECT * FROM accidente";
+		String sql = " SELECT c.nombrecliente, a.idaccidente, a.descripcion, a.fechaaccidente, a.clienterutcliente\r\n" + 
+				"FROM cliente c\r\n" + 
+				"INNER JOIN accidente a ON c.rutcliente=a.clienterutcliente  ";
 
 		//connexion base de datos y ejecucion de query
 		try {
@@ -69,11 +72,14 @@ public class QueryAccidente {
 
 			
 			while (rs.next()) {
-				Accidente a = new Accidente();
-				a.setDescripcion(rs.getString(2));
-				a.setFechaaccidente(rs.getString(3));
-				a.setClienterutcliente(rs.getString(4));
-				listaccidente.add(a);
+				
+				ConsultaAccidente ca = new ConsultaAccidente();
+				ca.setNombrecliente(rs.getString(1));
+				ca.setId(rs.getInt(2));
+				ca.setDescripsion(rs.getString(3));
+				ca.setFechaacc(rs.getString(4));
+				ca.setRutcliente(rs.getString("clienterutcliente"));
+				listaccidente.add(ca);
 			}
 			
 		} catch (SQLException e) {
