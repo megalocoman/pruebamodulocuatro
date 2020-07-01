@@ -1,13 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Informes de gestión</title>
+<link rel="Stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+<!--  FONT OSWALD -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap">
+<!-- CUSTON STYLE CSS -->
+<link rel="Stylesheet" href="Estilos/Estilos.css">
 </head>
 <body>
+	<div class="menu-boton">
+		<i class="fas fa-bars"></i>
+	</div>
+
+	<div>
+		<nav class="nav-main">
+			<img alt="Logo Principal" src="img/logo.png" class="nav-logo">
+			<ul class="nav-menu">
+				<li><a href="ingresocliente.jsp">Clientes</a></li>
+				<li><a href="#">Visitas</a></li>
+				<li><a href="#">OT</a></li>
+				<li><a href="informe.jsp">Informes de gestión</a></li>
+				<li><a href="Ingresoprofesional.jsp">Profesionales</a></li>
+				<li><a href="ingreso.jsp">Accidentes</a></li>
+			</ul>
+			<ul class="nav-menu-derecha">
+				<li><a href="#"> <i class="fas fa-search"></i>
+				</a></li>
+			</ul>
+		</nav>
+		<hr>
+	</div>
 
 	<h1>Informes de gestion</h1>
 	<h2>informe de gestion profesional</h2>
@@ -43,7 +73,7 @@
 
 	<h2>Informe clientes</h2>
 
-	<table>
+	<table id="table1">
 		<thead>
 			<tr>
 				<th>Cliente</th>
@@ -66,8 +96,13 @@
 			</c:forEach>
 		</tbody>
 	</table>
+
 	<form action="ServletInformeCliente" method="get">
 		<input type="submit" name="inf_profesional" value="crear informe">
 	</form>
+
+	<!-- INVOCAR JS -->
+	<script type="text/javascript" src="js/inicio.js"></script>
+
 </body>
 </html>
