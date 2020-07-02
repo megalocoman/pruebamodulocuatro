@@ -31,7 +31,6 @@
 			<img alt="Logo Principal" src="img/logo.png" class="nav-logo">
 			<ul class="nav-menu">
 				<li><a href="ingresocliente.jsp">Clientes</a></li>
-				<li><a href="#">Visitas</a></li>
 				<li><a href="CreacionOT.jsp">OT</a></li>
 				<li><a href="informe.jsp">Informes de gestión</a></li>
 				<li><a href="Ingresoprofesional.jsp">Profesionales</a></li>

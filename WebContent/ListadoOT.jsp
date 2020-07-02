@@ -29,7 +29,6 @@
 			<img alt="Logo Principal" src="img/logo.png" class="nav-logo">
 			<ul class="nav-menu">
 				<li><a href="ingresocliente.jsp">Clientes</a></li>
-				<li><a href="#">Visitas</a></li>
 				<li><a href="CreacionOT.jsp">OT</a></li>
 				<li><a href="informe.jsp">Informes de gestión</a></li>
 				<li><a href="Ingresoprofesional.jsp">Profesionales</a></li>
@@ -50,7 +49,7 @@
 	</c:if>
 
 	<table>
-<!-- 		<thead> -->
+		<thead>
 
 			<tr>
 				<th class="cabecera">Número OT</th>
@@ -62,29 +61,23 @@
 				<th class="cabecera">Rut Profesional</th>
 				<th class="cabecera">Actividad</th>
 			</tr>
-		<!-- </thead> -->
-		<!-- <tbody> -->
-			<tr>
-				<c:forEach items="${listadoot}" var="user">
+		</thead>
+		<tbody>
 
-					<td class="filas"><c:out value="${user.numeroot}"></c:out></td>
-					<td class="filas"><c:out value="${user.fecha_actividad}"></c:out></td>
-					<td class="filas"><c:out value="${user.valor}"></c:out></td>
-					<td class="filas"><c:out value="${user.pago}"></c:out></td>
-					<td class="filas"><c:out value="${user.statusactividad}"></c:out></td>
-					<td class="filas"><c:out value="${user.nombrecliente}"></c:out></td>
-					<td class="filas"><c:out value="${user.nombreprof}"></c:out></td>
-					<td class="filas"><c:out value="${user.descripcion}"></c:out></td>
-					<td><a
-						href="${pageContext.request.contextPath}/EliminarOT?hdnnumot=${user.numot}">Eliminar</a></td>
-					<!-- 						&nbsp;  -->
-					<%-- 						<a href="${pageContext.request.contextPath}/ModificarOT?hdnnumot=${user.numot}">Modificar</a> --%>
+			<c:forEach items="${listadoot}" var="user">
+				<tr>
+					<td>${user.numeroot}</td>
+					<td>${user.fecha_actividad}</td>
+					<td>${user.valor}</td>
+					<td>${user.pago}</td>
+					<td>${user.statusactividad}</td>
+					<td>${user.nombrecliente}</td>
+					<td>${user.nombreprof}</td>
+					<td>${user.descripcion}</td>
+				</tr>
+			</c:forEach>
 
-
-
-				</c:forEach>
-			</tr>
-		<!-- </tbody> -->
+		</tbody>
 
 
 
