@@ -1,0 +1,11 @@
+1.- CU1		Mantener Información Cliente
+2.- CU2		Mantener Información Profesionales
+3.- CU3		Crear Capacitación				(Se ingresa como OT)
+4.- CU4		Planificar visita				(Se ingresa como OT)
+5.- CU5		Revisar Cliente	
+6.- CU7		Crear caso de Asesoría				(Se ingresa como OT)
+7.- CU8		Ingresar actividad de Mejora			(Se ingresa como OT)
+8.- CU13	Ingresar Asesoría				(Se ingresa como OT)
+9.- CU14	Visualizar actividades
+10.- CU19	Generar reporte Cliente
+11. CU20	Generar reporte Global
