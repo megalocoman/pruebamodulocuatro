@@ -159,4 +159,44 @@
     <servlet-name>ServletInformeCliente</servlet-name>
     <url-pattern>/ServletInformeCliente</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CrearOT</display-name>
+    <servlet-name>CrearOT</servlet-name>
+    <servlet-class>servlet.CrearOT</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CrearOT</servlet-name>
+    <url-pattern>/CrearOT</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminarOT</display-name>
+    <servlet-name>EliminarOT</servlet-name>
+    <servlet-class>servlet.EliminarOT</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarOT</servlet-name>
+    <url-pattern>/EliminarOT</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListarOT</display-name>
+    <servlet-name>ListarOT</servlet-name>
+    <servlet-class>servlet.ListarOT</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListarOT</servlet-name>
+    <url-pattern>/ListarOT</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModificarOT</display-name>
+    <servlet-name>ModificarOT</servlet-name>
+    <servlet-class>servlet.ModificarOT</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificarOT</servlet-name>
+    <url-pattern>/ModificarOT</url-pattern>
+  </servlet-mapping>
 </web-app>

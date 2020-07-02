@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="C:/ProgramData/ojdbc8-full/ojdbc8-full/oraclepki.jar"/>
 	<classpathentry kind="lib" path="C:/ProgramData/ojdbc8-full/ojdbc8-full/osdt_cert.jar"/>
 	<classpathentry kind="lib" path="C:/ProgramData/ojdbc8-full/ojdbc8-full/osdt_core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cristian Jofre/OneDrive/Escritorio/javax.servlet-api-3.0.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

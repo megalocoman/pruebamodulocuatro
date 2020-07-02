@@ -2,11 +2,11 @@ package tablas;
 
 public class ConsultaAccidente {
 
-	private int id;
-	private String nombrecliente; 
-	private String descripsion;
-	private String fechaacc;
-	private String rutcliente;
+	public int id;
+	public String nombrecliente; 
+	public String descripsion;
+	public String fechaacc;
+	public String rutcliente;
 	
 	public ConsultaAccidente() {
 	}

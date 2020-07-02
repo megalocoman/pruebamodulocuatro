@@ -26,7 +26,11 @@ public class ServletIngresoProf extends HttpServlet {
 	
 		boolean valido= false;
 		
+		
 		pro.setRutprofesional(request.getParameter("rut_prof"));
+		
+		
+		
 		pro.setNombre(request.getParameter("nom_prof"));
 		pro.setTelefono((request.getParameter("telefono")));
 		pro.setCorreo(request.getParameter("correo"));
